@@ -3220,7 +3220,7 @@ window.formatMoney = formatMoney;
               </div>
               <div class="flex gap-2 pt-1">
                 <button onclick='window.renderReceipt(db.bills.find(x=>x.id===${JSON.stringify(b.id)}))' class="flex-1 py-1.5 bg-white border rounded-lg font-bold btn-touch">🧾 ดูใบเสร็จ</button>
-                ${canReturn ? `<button onclick="window.openReturnModal(${JSON.stringify(b.id)})" class="flex-1 py-1.5 bg-amber-100 text-amber-700 rounded-lg font-bold btn-touch">↩️ คืนสินค้า</button>` : ''}
+                ${canReturn ? `<button onclick="window.openReturnModal('${jsq(b.id)}')" class="flex-1 py-1.5 bg-amber-100 text-amber-700 rounded-lg font-bold btn-touch">↩️ คืนสินค้า</button>` : ''}
               </div>
             </div>`;
           }).join('') : `<p class="text-center text-slate-400 font-bold py-6">ไม่พบประวัติการขาย</p>`;
